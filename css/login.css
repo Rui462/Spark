@@ -1,0 +1,146 @@
+body{
+    background-color: #121212;
+    margin: 0;
+}
+@font-face {
+    font-family: skate;
+    src: url(SkateBoarderDemoRegular.ttf);
+  }
+  @font-face {
+    font-family: robtronika;
+    src: url(Robtronika-4Bq8p.ttf);
+  }
+@keyframes megjelen{
+    0%{opacity: 0; visibility: visible}
+    100%{opacity: 1; visibility: visible}
+}
+@keyframes eltunik{
+    0%{opacity: 1; visibility: visible}
+    100%{opacity: 0; visibility: hidden}
+}
+.glitch-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #121212;
+    opacity: 0;
+    visibility: hidden;
+ }
+
+ .glitch {
+    position: relative;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: 5px;
+    z-index: 1;
+    font-family: skate;
+ }
+ 
+ .glitch:before,
+ .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+ }
+ 
+ .glitch:before {
+    animation: glitch-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #0ff;
+    z-index: -1;
+ }
+ 
+ .glitch:after {
+    animation: glitch-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
+ }
+ 
+ @keyframes glitch-color {
+    0% {
+       transform: translate(0);
+    }
+ 
+    20% {
+       transform: translate(-3px, 3px);
+    }
+ 
+    40% {
+       transform: translate(-3px, -3px);
+    }
+ 
+    60% {
+       transform: translate(3px, 3px);
+    }
+ 
+    80% {
+       transform: translate(3px, -3px);
+    }
+ 
+    to {
+       transform: translate(0);
+    }
+ }
+ .bejelentkezofelulet{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    border: 3px solid white;
+    width: 75%;
+    height: auto;
+ }
+ .bejelentkezofelulet input[type=text]{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    background: transparent;
+    outline: none;
+    border: 3px solid white;
+    color: white;
+    font-family: robtronika;
+    font-size: 0.9em;
+ }
+ .bejelentkezofelulet input[type=text]::placeholder{
+    color: white;
+ }
+ .bejelentkezesgomb{
+    width: 100%;
+    padding: 0.5em;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-family: robtronika;
+    font-size: 0.8em;
+    cursor: pointer;
+ }
+ @keyframes gombszinvaltas{
+    0%{color: white; background: transparent;}
+    100%{color: black; background-color: white;}
+ }
+ @keyframes gombszinvaltas_vissza{
+    0%{color: black; background: white;}
+    100%{color: white; background: transparent;}
+ }
+ .bejelentkezesgomb:hover{
+    animation-name: gombszinvaltas;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+ }
+ .bejelentkezesgomb:not(:hover){
+    animation-name: gombszinvaltas_vissza;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+ }
+
+ 
